@@ -8,9 +8,7 @@
 		type: "GET",
 		dataType: "xml",
 		success: function(data){
-			var container = document.createElement('div');
 			var inner = '';
-			document.body.appendChild(container);
 		    $(data).find("item").each(function () { // or "item" or whatever suits your feed
 		        var el = $(this);
 		        inner += '<p style="font-weight:bold;font-size:14pt;">' + el.find("title").text() + '</p>' 
@@ -18,11 +16,12 @@
 		        				+ '<p style="">' + (el.find("description").text()).substring(0,200).replace(/<[^>]*>/g, '') + '...</p>'
 		        				+ '----------------------------------------------------------</ br>';
 		    });
-		    container.innerHTML = inner;
+		    document.getElementById('container').innerHTML = inner;
 		},
 	});
     </script>
   </head>
   <body>
+  	<div id="container" style="overflow-y:auto;"></div>
   </body>
 </html>
