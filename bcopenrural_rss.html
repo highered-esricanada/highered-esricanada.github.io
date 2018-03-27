@@ -2,7 +2,7 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
-	$.get("https://www.ruralopendata.ca/articles/feed/", function (data) {
+	$.get("https://www.ruralopendata.ca/articles/feed", function (data) {
 	    $(data).find("item").each(function () { // or "item" or whatever suits your feed
 	        var el = $(this);
 
