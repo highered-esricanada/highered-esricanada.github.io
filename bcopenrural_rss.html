@@ -9,7 +9,7 @@
 		dataType: "xml",
 		success: function(data){
 			var inner = '';
-			document.body.style.overflow = 'scroll';
+			document.body.style.overflow-y = 'scroll';
 		    $(data).find("item").each(function () { // or "item" or whatever suits your feed
 		        var el = $(this);
 		        inner += '<p style="font-weight:bold;font-size:14pt;">' + el.find("title").text() + '</p>' 
@@ -23,6 +23,6 @@
     </script>
   </head>
   <body>
-  	<div id="container" style="overflow-y:auto;"></div>
+  	<div id="container"></div>
   </body>
 </html>
