@@ -7,7 +7,8 @@
 	$.ajax({
 		url: "https://www.ruralopendata.ca/articles/feed/",
 		type: "GET",
-		dataType: "sml",
+		dataType: "xml",
+		crossDomain: true,
 		success: function(data){
 		    $(data).find("item").each(function () { // or "item" or whatever suits your feed
 		        var el = $(this);
