@@ -1,15 +1,17 @@
 <html>
 <head>
-	<script src="jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 	$.get("https://www.ruralopendata.ca/articles/feed/", function (data) {
-	    $(data).find("entry").each(function () { // or "item" or whatever suits your feed
+	    $(data).find("item").each(function () { // or "item" or whatever suits your feed
 	        var el = $(this);
 
-	        console.log("------------------------");
-	        console.log("title      : " + el.find("title").text());
-	        console.log("author     : " + el.find("author").text());
-	        console.log("description: " + el.find("description").text());
+	        var div = document.createElement('div');
+	        document.body.appendChild(div);
+	        div.innerHTML = '<p style="font-weight:bold;font-size:14pt;">' + el.find("title").text() + '</p>' 
+	        				+ '<p style="font-style:italic;"><a href="' + el.find("link").text() + '">' + el.find("link").text() + '</a></p>'
+	        				+ '<p style="">' + (el.find("description").text()).substring(0,300).replace(/<[^>]*>/g, '') + '...</p>'
+	        				+ '----------------------------------------------------------</ br>'
 	    });
 	});
 	</script>
@@ -17,3 +19,4 @@
 <body>
 </body>
 </html>
+
