@@ -9,6 +9,7 @@
 		type: "GET",
 		dataType: "xml",
 		crossDomain: true,
+		xhrFields: { withCredentials: true },
 		success: function(data){
 		    $(data).find("item").each(function () { // or "item" or whatever suits your feed
 		        var el = $(this);
