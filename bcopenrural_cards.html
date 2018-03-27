@@ -20,7 +20,6 @@ h1{
 .wrapper{
   width: 90%;
   margin: 0 auto;
-  max-width: 80rem;
 }
 
 .cols{
@@ -177,20 +176,19 @@ h1{
 
 @media screen and (max-width: 64rem){
   .col{
-    width: calc(33.333333% - 2rem);
+    width: 180px
   }
 }
 
 @media screen and (max-width: 48rem){
   .col{
-    width: calc(50% - 2rem);
+    width: 180px
   }
 }
 
 @media screen and (max-width: 32rem){
   .col{
-    width: 100%;
-    margin: 0 0 2rem 0;
+    width: 180px
   }
 }
 </style>
@@ -202,7 +200,7 @@ h1{
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
 			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=agriculture">
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/100/100/)">
+					<div class="front">
 						<div class="inner">
 							<p>Agriculture</p>
 	          				<span>Short Description</span>
