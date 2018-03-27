@@ -9,7 +9,7 @@
 		dataType: "xml",
 		success: function(data){
 			var container = document.createElement('div');
-			container.style.overflow = 'auto';
+			container.style.overflow = 'scroll';
 			document.body.appendChild(container);
 		    $(data).find("item").each(function () { // or "item" or whatever suits your feed
 		        var el = $(this);
