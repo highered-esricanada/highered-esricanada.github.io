@@ -2,17 +2,24 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
-	$.get("https://www.ruralopendata.ca/articles/feed", function (data) {
-	    $(data).find("item").each(function () { // or "item" or whatever suits your feed
-	        var el = $(this);
 
-	        var div = document.createElement('div');
-	        document.body.appendChild(div);
-	        div.innerHTML = '<p style="font-weight:bold;font-size:14pt;">' + el.find("title").text() + '</p>' 
-	        				+ '<p style="font-style:italic;"><a href="' + el.find("link").text() + '">' + el.find("link").text() + '</a></p>'
-	        				+ '<p style="">' + (el.find("description").text()).substring(0,300).replace(/<[^>]*>/g, '') + '...</p>'
-	        				+ '----------------------------------------------------------</ br>'
-	    });
+	//$.get("https://www.ruralopendata.ca/articles/feed/", function (data) {
+	$.ajax({
+		url: "https://www.ruralopendata.ca/articles/feed/",
+		type: "GET",
+		dataType: "sml",
+		success: function(data){
+		    $(data).find("item").each(function () { // or "item" or whatever suits your feed
+		        var el = $(this);
+
+		        var div = document.createElement('div');
+		        document.body.appendChild(div);
+		        div.innerHTML = '<p style="font-weight:bold;font-size:14pt;">' + el.find("title").text() + '</p>' 
+		        				+ '<p style="font-style:italic;"><a href="' + el.find("link").text() + '">' + el.find("link").text() + '</a></p>'
+		        				+ '<p style="">' + (el.find("description").text()).substring(0,300).replace(/<[^>]*>/g, '') + '...</p>'
+		        				+ '----------------------------------------------------------</ br>'
+		    });
+		},
 	});
 	</script>
 </head>
