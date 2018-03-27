@@ -9,7 +9,7 @@
 		dataType: "xml",
 		success: function(data){
 			var inner = '';
-			$(parent).attr('scrolling','yes')
+			parent.style.overflow = 'scroll';
 		    $(data).find("item").each(function () { // or "item" or whatever suits your feed
 		        var el = $(this);
 		        inner += '<p style="font-weight:bold;font-size:14pt;">' + el.find("title").text() + '</p>' 
