@@ -9,19 +9,16 @@
 		dataType: "xml",
 		success: function(data){
 			var container = document.createElement('div');
-			container.style.overflow = 'scroll';
+			var inner = '';
 			document.body.appendChild(container);
 		    $(data).find("item").each(function () { // or "item" or whatever suits your feed
 		        var el = $(this);
-
-		        var div = document.createElement('div');
-		        div.innerHTML = '<p style="font-weight:bold;font-size:14pt;">' + el.find("title").text() + '</p>' 
+		        inner += '<p style="font-weight:bold;font-size:14pt;">' + el.find("title").text() + '</p>' 
 		        				+ '<p style="font-style:italic;"><a href="' + el.find("link").text() + '">' + el.find("link").text() + '</a></p>'
 		        				+ '<p style="">' + (el.find("description").text()).substring(0,200).replace(/<[^>]*>/g, '') + '...</p>'
-		        				+ '----------------------------------------------------------</ br>'
-		        container.appendChild(div);
-
+		        				+ '----------------------------------------------------------</ br>';
 		    });
+		    container.innerHTML = inner;
 		},
 	});
     </script>
