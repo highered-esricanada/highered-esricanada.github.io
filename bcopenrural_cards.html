@@ -6,6 +6,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+
 }
 
 h1{
@@ -20,6 +21,8 @@ h1{
 .wrapper{
   width: 90%;
   margin: 0 auto;
+  background-color: black;
+  opacity: 0.5;
 }
 
 .cols{
@@ -174,37 +177,9 @@ h1{
   font-weight: 300;
 }
 
-@media screen and (max-width: 64rem){
-  	.col{
-    	width: 180px
-  	}
-	.wrapper{
-		height: 1000px;
-	}
-}
-
-@media screen and (max-width: 48rem){
-  	.col{
-    	width: 180px
-  	}	
-  	.wrapper{
-		height: 1000px;
-	}
-}
-
-@media screen and (max-width: 32rem){
-  	.col{
-    	width: 180px
-  	}
-	.wrapper{
-		height: 1000px;
-	}  	
-}
 </style>
 
-<script>
-	window.top.document.getElementById('frame').style.height = '500px';
-</script>
+<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/4.6/esri/css/main.css">
 
 </head>
 
@@ -214,7 +189,7 @@ h1{
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
 			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=agriculture" target="_top">
 				<div class="container">
-					<div class="front">
+					<div class="front" style="background-image: url(ruralBC/agriculture.jpg)">
 						<div class="inner">
 							<p>Agriculture</p>
 	          				<span>Short Description</span>
@@ -232,7 +207,7 @@ h1{
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
 			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Boundaries" target="_top">
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/100/100/)">
+					<div class="front" style="background-image: url(ruralBC/boundaries.jpg)">
 						<div class="inner">
 							<p>Boundaries</p>
 	          				<span>Short Description</span>
@@ -249,7 +224,7 @@ h1{
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
 			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Business" target="_top">			
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/100/100/)">
+					<div class="front" style="background-image: url(ruralBC/business.jpg)">
 						<div class="inner">
 							<p>Business</p>
 	          				<span>Short Description</span>
@@ -266,7 +241,7 @@ h1{
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
 			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=safety" target="_top">			
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/100/100/)">
+					<div class="front" style="background-image: url(ruralBC/safety.jpg)">
 						<div class="inner">
 							<p>Community Safety</p>
 	          				<span>Short Description</span>
@@ -283,7 +258,7 @@ h1{
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
 			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Education" target="_top">			
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/100/100/)">
+					<div class="front" style="background-image: url(ruralBC/education.jpg)">
 						<div class="inner">
 							<p>Education</p>
 	          				<span>Short Description</span>
@@ -300,7 +275,7 @@ h1{
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
 			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Health" target="_top">			
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/100/100/)">
+					<div class="front" style="background-image: url(ruralBC/health.jpg)">
 						<div class="inner">
 							<p>Health</p>
 	          				<span>Short Description</span>
@@ -317,7 +292,7 @@ h1{
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
 			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Housing" target="_top">			
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/100/100/)">
+					<div class="front" style="background-image: url(ruralBC/housing.jpg)">
 						<div class="inner">
 							<p>Housing</p>
 	          				<span>Short Description</span>
@@ -334,7 +309,7 @@ h1{
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
 			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Transportation" target="_top">			
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/100/100/)">
+					<div class="front" style="background-image: url(ruralBC/transportation)">
 						<div class="inner">
 							<p>Transportation</p>
 	          				<span>Short Description</span>
