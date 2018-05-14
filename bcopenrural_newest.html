@@ -7,6 +7,7 @@
 <script>
 // AMD
 require([
+  "esri/request", 
   "esri/map",
   "esri/layers/ArcGISDynamicMapServiceLayer",
   "esri/tasks/QueryTask",
@@ -17,7 +18,7 @@ require([
   "dojo/dom",
   "dojo/on",
   "dojo/domReady!"
-], function(Map, ArcGISDynamicMapServiceLayer, QueryTask, Query, SimpleMarkerSymbol, InfoTemplate, Color, dom, on) {
+], function(esriRequest, Map, ArcGISDynamicMapServiceLayer, QueryTask, Query, SimpleMarkerSymbol, InfoTemplate, Color, dom, on) {
 
 var earthquakes = esriRequest({
   url: "http://data-ruralbc.opendata.arcgis.com/datasets",
