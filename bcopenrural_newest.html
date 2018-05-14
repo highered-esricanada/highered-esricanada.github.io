@@ -29,7 +29,7 @@ function requestSucceeded(data) {
 	console.log(earthquakes);
 }
 function requestFailed(error) {
-  console.log("Error: Error");
+  console.log("Error: " + error.message);
 }
 earthquakes.then(requestSucceeded, requestFailed);
 
