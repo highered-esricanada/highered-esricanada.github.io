@@ -24,8 +24,15 @@ var earthquakes = esriRequest({
   url: "http://data-ruralbc.opendata.arcgis.com/datasets",
   handleAs: "json"
 });
+
+function requestSucceeded(data) {
+	console.log(earthquakes);
+}
+function requestFailed(error) {
+  console.log("Error: Error");
+}
 earthquakes.then(requestSucceeded, requestFailed);
-console.log(earthquakes);
+
 
 });
 
