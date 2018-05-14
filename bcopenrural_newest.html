@@ -16,30 +16,7 @@ require([
   "dojo/domReady!"
 ], function(Map, ArcGISDynamicMapServiceLayer, QueryTask, Query, SimpleMarkerSymbol, InfoTemplate, Color, dom, on) {
   //create map and add layer
-  map = new Map("mapDiv");
-  var layer = new ArcGISDynamicMapServiceLayer(
-    "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer");
-  map.addLayer(layer);
-
-  //initialize query task
-  queryTask = new QueryTask("http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/0");
-
-  //initialize query
-  query = new Query();
-  query.returnGeometry = true;
-  query.outFields = ["CITY_NAME", "STATE_NAME", "POP1990"];
-
-  //initialize InfoTemplate
-  infoTemplate = new InfoTemplate("${CITY_NAME}", "Name : ${CITY_NAME}<br/> State : ${STATE_NAME}<br />Population : ${POP1990}");
-
-  //create symbol for selected features
-  symbol = new SimpleMarkerSymbol();
-  symbol.setStyle(SimpleMarkerSymbol.STYLE_SQUARE);
-  symbol.setSize(10);
-  symbol.setColor(new Color([255,255,0,0.5]));
-
-  //write "Get Details" button's click event 
-  on(dom.byId("runQuery"), "click", executeQueryTask);
+document.write("HELLO");
 });
 
 </script>
@@ -47,10 +24,8 @@ require([
 
 </head>
 <body>
-  <br/>
-  US city population greater than : <input type="text" id="population" value="500000" />
-  <input type="button" value="Get Details" id="runQuery" />
+
   <div id="mapDiv" style="width:600px; height:600px; border:1px solid #000;"></div>
-  Click on a city once it's highlighted to get an InfoWindow.
+
 </body>
 </html>
