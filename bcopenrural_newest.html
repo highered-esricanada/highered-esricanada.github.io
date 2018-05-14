@@ -1,40 +1,9 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="https://js.arcgis.com/3.24/esri/css/esri.css">
-<script src="https://js.arcgis.com/3.24/"></script>
-
 <script>
-// AMD
-require([
-  "esri/request", 
-  "esri/map",
-  "esri/layers/ArcGISDynamicMapServiceLayer",
-  "esri/tasks/QueryTask",
-  "esri/tasks/query",
-  "esri/symbols/SimpleMarkerSymbol",
-  "esri/InfoTemplate",
-  "dojo/_base/Color",
-  "dojo/dom",
-  "dojo/on",
-  "dojo/domReady!"
-], function(esriRequest, Map, ArcGISDynamicMapServiceLayer, QueryTask, Query, SimpleMarkerSymbol, InfoTemplate, Color, dom, on) {
 
-var earthquakes = esriRequest({
-  url: "http://data-ruralbc.opendata.arcgis.com/datasets",
-  handleAs: "json"
-});
-
-function requestSucceeded(data) {
-	console.log(earthquakes);
-}
-function requestFailed(error) {
-  console.log("Error: " + error.message);
-}
-earthquakes.then(requestSucceeded, requestFailed);
-
-
-});
+document.location.href="http://data-ruralbc.opendata.arcgis.com/datasets?sort=-updatedAt";
 
 </script>
 
@@ -42,7 +11,7 @@ earthquakes.then(requestSucceeded, requestFailed);
 </head>
 <body>
 
-  <div id="mapDiv" style="width:600px; height:600px; border:1px solid #000;"></div>
+  
 
 </body>
 </html>
