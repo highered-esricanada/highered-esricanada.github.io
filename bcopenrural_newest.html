@@ -18,8 +18,14 @@ require([
   "dojo/on",
   "dojo/domReady!"
 ], function(Map, ArcGISDynamicMapServiceLayer, QueryTask, Query, SimpleMarkerSymbol, InfoTemplate, Color, dom, on) {
-  //create map and add layer
-alert("HELLO");
+
+var earthquakes = esriRequest({
+  url: "http://data-ruralbc.opendata.arcgis.com/datasets",
+  handleAs: "json"
+});
+earthquakes.then(requestSucceeded, requestFailed);
+console.log(earthquakes);
+
 });
 
 </script>
