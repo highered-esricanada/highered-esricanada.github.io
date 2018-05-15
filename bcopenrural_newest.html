@@ -12,7 +12,7 @@ require([
 function(arcgisPortal, JSON) {
   var portal = new arcgisPortal.Portal('http://data-ruralbc.opendata.arcgis.com');
   var params = {
-    uploaded: [0000001524355200000 TO 0000001527724800000]
+    q: 'uploaded: [0000001524355200000 TO 0000001527724800000]'
   };
   portal.queryItems(params).then(function(result){
     console.log('success' + JSON.toJson(result));
@@ -23,6 +23,6 @@ function(arcgisPortal, JSON) {
 
 </head>
 <body>
-
+HELLO
 </body>
 </html>
