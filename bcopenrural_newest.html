@@ -1,18 +1,27 @@
 <html>
 <head>
 
+<link rel="stylesheet" href="https://js.arcgis.com/4.7/esri/css/main.css">
+<script src="https://js.arcgis.com/4.7/"></script>
+
 <script>
-function doit(){
-console.log(document.getElementById("test").contentWindow.document.getElementById("search_results"));
-}
+require([
+  "esri/arcgis/Portal", "dojo/_base/json", ... 
+], function(arcgisPortal, JSON, ... ) {
+  var portal = new arcgisPortal.Portal('http://data-ruralbc.opendata.arcgis.com');
+  var params = {
+    uploaded: [0000001524355200000 TO 0000001527724800000]
+  };
+  portal.queryItems(params).then(function(result){
+    console.log('success' + JSON.toJson(result));
+  });
+  ...
+});
 </script>
 
 
 </head>
 <body>
-<input type="button" onclick="doit();">
-<div>HELLO2</div>
-<iframe id="test" src="https://data-ruralbc.opendata.arcgis.com/datasets?sort=-updatedAt" height="500px" width="100%"></iframe>
 
 </body>
 </html>
