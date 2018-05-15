@@ -3,7 +3,7 @@
 
 <script>
 function doit(){
-document.write(document.getElementById("test").contentWindow.document.getElementById("search_results"));
+console.log(document.getElementById("test").contentWindow.document.getElementById("search_results"));
 }
 </script>
 
@@ -11,7 +11,7 @@ document.write(document.getElementById("test").contentWindow.document.getElement
 </head>
 <body>
 <input type="button" onclick="doit();">
-<div>HELLO1</div>
+<div>HELLO2</div>
 <iframe id="test" src="https://data-ruralbc.opendata.arcgis.com/datasets?sort=-updatedAt" height="500px" width="100%"></iframe>
 
 </body>
