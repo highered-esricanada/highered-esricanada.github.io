@@ -80,7 +80,7 @@ function(arcgisPortal, JSON) {
 	newdatasets += '<ul>'
 
 	for(var x=0;x<dataset.length;x++){
-	  newdatasets += '<li><a href="https://ruralbc.maps.arcgis.com/home/item.html?id=' + dataset[x].id + '">' + dataset[x].title + '<br />';
+	  newdatasets += '<li><a href="https://ruralbc.maps.arcgis.com/home/item.html?id=' + dataset[x].id + '" target="_blank">' + dataset[x].title + '<br />';
 	  newdatasets += 'Uploaded by: ' + dataset[x].owner + '<br />';
 	  newdatasets += 'Last Updated: ' + dataset[x].modified.getDate() + ' ' +  monthNames[dataset[x].modified.getMonth()] + ' ' + dataset[x].modified.getFullYear() + '</a></li>';
 	}; 
