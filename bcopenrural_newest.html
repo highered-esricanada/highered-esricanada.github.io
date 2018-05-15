@@ -12,15 +12,17 @@ require([
 function(arcgisPortal, JSON) {
   var portal = new arcgisPortal.Portal('http://www.arcgis.com');
   var params = {
-    q: 'RDFFG',
-    //sortField: 'modified',
-    //sortOrder: 'desc',
-    //num: 5,
+    q: '*',
+    sortField: 'modified',
+    sortOrder: 'desc',
+    num: 5,
     id: 2350126402
     //q: 'uploaded: [0000001524355200000 TO 0000001527724800000]'
   };
   portal.queryItems(params).then(function(result){
-    console.log('success' + JSON.toJson(result));
+    for(var dataset in result){
+    	console.log(dataset.title + "/" + dataset.owner + "/" + dataset.modified )
+    }
   });
 });
 </script>
@@ -28,6 +30,6 @@ function(arcgisPortal, JSON) {
 
 </head>
 <body>
-HELLO1
+HELLO3
 </body>
 </html>
