@@ -10,12 +10,13 @@ require([
   "dojo/_base/json" 
 ], 
 function(arcgisPortal, JSON) {
-  var portal = new arcgisPortal.Portal('http://data-ruralbc.opendata.arcgis.com');
+  var portal = new arcgisPortal.Portal('http://www.arcgis.com');
   var params = {
     q: 'title:*',
     sortField: 'modified',
     sortOrder: 'desc',
-    num: 5
+    num: 5,
+    id: 2350126402
     //q: 'uploaded: [0000001524355200000 TO 0000001527724800000]'
   };
   portal.queryItems(params).then(function(result){
