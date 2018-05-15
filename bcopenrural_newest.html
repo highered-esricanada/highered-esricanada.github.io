@@ -28,7 +28,8 @@ function(arcgisPortal, JSON) {
   portal.queryItems(params).then(function(result){
   	dataset = result.results;
 
-	var newdatasets = '<ul>'
+	var newdatasets = '<h1>Recently Uploaded Datasets</h1>';
+	newdatasets += '<ul>'
 
 	for(var x=0;x<dataset.length;x++){
 	  newdatasets += '<li>Title: '+ dataset[x].title + "<br />Uploaded by: " + dataset[x].owner + "<br />Last Updated: " + dataset[x].modified.getDate() + " " +  monthNames[dataset[x].modified.getMonth()] + " " + dataset[x].modified.getFullYear() + '</li>';
