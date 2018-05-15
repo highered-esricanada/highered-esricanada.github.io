@@ -10,19 +10,32 @@ require([
   "dojo/_base/json" 
 ], 
 function(arcgisPortal, JSON) {
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
   var portal = new arcgisPortal.Portal('http://www.arcgis.com');
   var params = {
-    q: '*',
+    q: 'orgid: d2AjSFw01XGyHQgE',
     sortField: 'modified',
     sortOrder: 'desc',
     num: 5,
-    id: 2350126402
-    //q: 'uploaded: [0000001524355200000 TO 0000001527724800000]'
+    orgid: 2350126402
   };
   portal.queryItems(params).then(function(result){
-    for(var dataset in result){
-    	console.log(dataset.title + "/" + dataset.owner + "/" + dataset.modified )
-    }
+  	dataset = result.results;
+
+	var newdatasets = '<ul>'
+
+	for(var x=0;x<dataset.length;x++){
+	  newdatasets += '<li>Title: '+ dataset[x].title + "<br />Uploaded by: " + dataset[x].owner + "<br />Last Updated: " + dataset[x].modified.getDate() + " " +  monthNames[dataset[x].modified.getMonth()] + " " + dataset[x].modified.getFullYear() + '</li>';
+	}; 
+
+	newdatasets += '</ul>';
+	document.getElementById("newdatasets").innerHTML = newdatasets;
   });
 });
 </script>
@@ -30,6 +43,8 @@ function(arcgisPortal, JSON) {
 
 </head>
 <body>
-HELLO3
+<div id="newdatasets">
+	
+</div>
 </body>
 </html>
