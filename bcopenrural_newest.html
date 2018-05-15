@@ -76,7 +76,7 @@ function(arcgisPortal, JSON) {
   	console.log(result);
   	dataset = result.results;
 
-	var newdatasets = '<h1>Recently Uploaded Datasets</h1>';
+	var newdatasets = '';
 	newdatasets += '<ul>'
 
 	for(var x=0;x<dataset.length;x++){
@@ -94,8 +94,10 @@ function(arcgisPortal, JSON) {
 
 </head>
 <body>
-<div id="newdatasets" style="height:300px;overflow-y:scroll;border: 1px solid;">
+<div id="newdatasets" style="height:400px;overflow-y:scroll;border: 1px solid;">
 	
 </div>
 </body>
 </html>
+
+
